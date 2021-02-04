@@ -63,7 +63,9 @@ Because the model did not reach the target performance of 75%, a few adjustments
   The final attempt at increasing the accuracy of the model was to increase the number of epochs.  For this model, I continued with the 3 layer model with the added neurons and "sigmoid" activation and then increased the epochs to 500.  The accuracy actually dropped just slightly from running the same model with only 100 epochs and only had an accuracy of 72.59%.
   ![Optimization_5](Results/Optimization_5.png)
   
-Ultimately, even with 5 attempts at optimization, I was unable to get the neural network model to perform at the 75% target accuracy.
+Ultimately, even with 5 attempts at optimization, I was unable to get the neural network model to perform at the 75% target accuracy.  The best performing model was optimization 4, which consisted of 3 hidden layers, having 129 neurons, 50 neurons and 20 neurons respectively, all activated with "sigmoid" and run for 100 epochs.  The highest accuracy was 72.64%.
 
 ### Summary
-Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
+This analysis was to create a machine learning neural networks to predict whether applicants will be successful if funded by Alphabet Soup.  Based on the data provided, a deep learning model was created that produced 72.40% accuracy.  After five attempts to optimize the model, including dropping a column, increasing neurons, adding hidden layers, changing activation types and increasing the epochs, the most optimized model was still only able the produce 72.64% accuracy, which was below the target performance of 75% accuracy.  
+
+To further improve this model and its performance, a more basic machine learning model, such as Random Forest could be utilized.  Random forest classifiers combine multiple smaller models into a more robust and accurate model using many decision trees.  They are easy to interpret and can easily handle outlier and nonlinear data and could be a great fit for this dataset.

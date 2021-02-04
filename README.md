@@ -16,21 +16,21 @@ Software: Python 3.7, Pandas 1.1.3, Scikit-learn 0.23.2, TensorFlow 2.4.1, Jupyt
 
 The first step of the analysis was to preprocess the data.  First, the 'EIN' and 'NAME' columns were dropped from the data because it is safe to assume that they would not have an effect on the success of applicants.  
 
-![Drop_columns](Resources/Drop_columns.png)
+![Drop_columns](Results/Drop_columns.png)
 
 Next, all object type columns were reviewed to determine if the number of unique values should be reduced by binning less common values into an "other" group. This was completed for both the Application Type and Classification columns.  
 
-![Binning1](Resources/Binning1.png)
-![Binning2](Resources/Binning2.png)
+![Binning1](Results/Binning1.png)
+![Binning2](Results/Binning2.png)
 
 Then, because the model is unable to handle object type data, each of the object type columns was encoded using OneHotEncoder and the original object type columns were dropped.
 
-![Encoding](Resources/Encoding.png)
-![Merge](Resources/Merge.png)
+![Encoding](Results/Encoding.png)
+![Merge](Results/Merge.png)
 
 After converting all of the data to the proper format, the target variable (y) for the analysis was set as the 'IS_SUCCESSFUL' column and the features variable (X) was set as all of the columns associated with 'APPLICATION TYPE', 'AFFILIATION', 'CLASSIFICATION', 'USE_CASE', 'ORGANIZATION', 'STATUS', 'INCOME_AMT', 'SPECIAL_CONSIDERATIONS' and 'ASK_AMT'.  The data was then split into training and testing datasets and the features datasets (X_train & X_test) were scaled using StandardScaler() to normalize the data in hopes to create a more accurate model.
 
-![Scale](Resources/Scale.png)
+![Scale](Results/Scale.png)
 
 ### Compiling, Training, and Evaluating the Model
 

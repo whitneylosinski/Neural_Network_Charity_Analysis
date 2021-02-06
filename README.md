@@ -60,7 +60,7 @@ Because the model did not reach the target performance of 75%, a few adjustments
   ![Optimization_4](Results/Optimization_4.png)
   
   5. **Increasing number of epochs** - </br>
-  The final attempt at increasing the accuracy of the model was to increase the number of epochs.  For this model, I continued with the 3 layer model with the added neurons and "relu" activation and then increased the epochs to 500.  The accuracy actually dropped just slightly from running the same model with only 100 epochs and only had an accuracy of 72.59%.
+  The final attempt at increasing the accuracy of the model was to increase the number of epochs.  For this model, I continued with the 3 layer model with the added neurons and "relu" activation and then increased the epochs to 500.  The accuracy actually dropped just slightly from running the same model with only 100 epochs and only had an accuracy of 72.65%.
   ![Optimization_5](Results/Optimization_5.png)
   
 Ultimately, even with 5 attempts at optimization, I was unable to get the neural network model to perform at the 75% target accuracy.  The best performing model was optimization 3, which consisted of 3 hidden layers, having 129 neurons, 50 neurons and 20 neurons respectively, all activated with "relu" and run for 100 epochs.  The highest accuracy was 72.66%.

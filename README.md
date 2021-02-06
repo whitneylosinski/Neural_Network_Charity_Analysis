@@ -34,7 +34,7 @@ After converting all of the data to the proper format, the target variable (y) f
 
 ### Compiling, Training, and Evaluating the Model
 
-For the first pass at running the model, the number of activation functions was set equal to the number of columns in the features variable (X), which was 43.  Two layers were used initially to see if a basic nueral network would be a good fit for the data.  The first layer was set to use 80 neurons, which is about double the input features, and the second layer was set to use 30 neurons.  The two layers were assigned the "relu" activation and the output later was assigned the "sigmoid" activation.  This original model acheived an accuracy of 72.40%, which was below the target model performance of 75%.
+For the first pass at running the model, the number of activation functions was set equal to the number of columns in the features variable (X), which was 43.  Two layers were used initially to see if a basic nueral network would be a good fit for the data.  The first layer was set to use 80 neurons, which is about double the input features, and the second layer was set to use 30 neurons.  The two layers were assigned the "relu" activation and the output later was assigned the "sigmoid" activation.  This original model acheived an accuracy of 72.51%, which was below the target model performance of 75%.
 
 ![Model](Results/Model.png)
 ![Original](Results/Original.png)
@@ -44,28 +44,28 @@ For the first pass at running the model, the number of activation functions was 
 Because the model did not reach the target performance of 75%, a few adjustments were made to the model to try and improve the performance accuracy.  Below are descriptions of the five adjustments that were made and the performance of the model after each adjustment.
 
   1. **Adjust the input data** - </br>
-  It's not usually a good idea to delete data if avoidable but in this case, I wanted to see if dropping the data in the 'ASK_AMT' column would have any effect on the model performance.  It was possible that it may have had some outliers that were skewing the model and inhibiting accuracy.  After running the model, however, there seemed to be only miniscule improvements in accuracy (72.59%) so the data was reinserted into the analysis for the remaining 4 optimization attempts.</br>
+  It's not usually a good idea to delete data if avoidable but in this case, I wanted to see if dropping the data in the 'ASK_AMT' column would have any effect on the model performance.  It was possible that it may have had some outliers that were skewing the model and inhibiting accuracy.  After running the model, however, there seemed to be only only a small improvement in accuracy (72.59%) so the data was reinserted into the analysis for the remaining 4 optimization attempts.</br>
       ![Optimization_1](Results/Optimization_1.png)
 
   2. **Adding more neurons** - </br>
-  As a general rule, the first layer should have 2-3 times the number of neurons as input features in the data.  Since 80 neurons in our original model was twice the number of imput features, I decided to increase the neurons in the first layer to 3 times the imput features for optimization.  This set the first layer to have 129 layers, and I then increased the second layer to have 50 neurons.  This model also only provided miniscule improvements to in accuracy at 72.45%.</br>
+  As a general rule, the first layer should have 2-3 times the number of neurons as input features in the data.  Since 80 neurons in our original model was twice the number of imput features, I decided to increase the neurons in the first layer to 3 times the imput features for optimization.  This set the first layer to have 129 layers, and I then increased the second layer to have 50 neurons.  This model also only provided miniscule improvements in accuracy compared to the original model at 72.55%.</br>
   ![Optimization_2](Results/Optimization_2.png)
   
   3. **Adding more layers** - </br>
-  The initial model only had two layers.  This optimization attempt added a third layer with an additional 20 neurons but still only saw minor improvements to the model accuracy at 72.59%.</br>
+  The initial model only had two layers.  This optimization attempt added a third layer with an additional 20 neurons, resulting minor improvements to the model accuracy at 72.66%.</br>
   ![Optimization_3](Results/Optimization_3.png)
   
   4. **Changing the activation** - </br>
-  The original model used "relu" as the activation for it's two layers.  I tried using "tanh" as the activation for each layer and then also tried "sigmoid" as the activation for each layer.  "Sigmoid" provided the better results but still only resulted in a model accuracy of 72.64%.</br>
+  The original model used "relu" as the activation for it's two layers.  I tried using "tanh" as the activation for each layer and then also tried "sigmoid" as the activation for each layer.  "Sigmoid" provided the worse results for the model resulting in an accuracy of only 72.56%.</br>
   ![Optimization_4](Results/Optimization_4.png)
   
   5. **Increasing number of epochs** - </br>
-  The final attempt at increasing the accuracy of the model was to increase the number of epochs.  For this model, I continued with the 3 layer model with the added neurons and "sigmoid" activation and then increased the epochs to 500.  The accuracy actually dropped just slightly from running the same model with only 100 epochs and only had an accuracy of 72.59%.
+  The final attempt at increasing the accuracy of the model was to increase the number of epochs.  For this model, I continued with the 3 layer model with the added neurons and "relu" activation and then increased the epochs to 500.  The accuracy actually dropped just slightly from running the same model with only 100 epochs and only had an accuracy of 72.59%.
   ![Optimization_5](Results/Optimization_5.png)
   
-Ultimately, even with 5 attempts at optimization, I was unable to get the neural network model to perform at the 75% target accuracy.  The best performing model was optimization 4, which consisted of 3 hidden layers, having 129 neurons, 50 neurons and 20 neurons respectively, all activated with "sigmoid" and run for 100 epochs.  The highest accuracy was 72.64%.
+Ultimately, even with 5 attempts at optimization, I was unable to get the neural network model to perform at the 75% target accuracy.  The best performing model was optimization 3, which consisted of 3 hidden layers, having 129 neurons, 50 neurons and 20 neurons respectively, all activated with "relu" and run for 100 epochs.  The highest accuracy was 72.66%.
 
 ### Summary
-This analysis was to create a machine learning neural networks to predict whether applicants will be successful if funded by Alphabet Soup.  Based on the data provided, a deep learning model was created that produced 72.40% accuracy.  After five attempts to optimize the model, including dropping a column, increasing neurons, adding hidden layers, changing activation types and increasing the epochs, the most optimized model was still only able the produce 72.64% accuracy, which was below the target performance of 75% accuracy.  
+This analysis was to create a machine learning neural networks to predict whether applicants will be successful if funded by Alphabet Soup.  Based on the data provided, a deep learning model was created that produced 72.51% accuracy.  After five attempts to optimize the model, including dropping a column, increasing neurons, adding hidden layers, changing activation types and increasing the epochs, the most optimized model was still only able the produce 72.66% accuracy, which was below the target performance of 75% accuracy.  
 
 To further improve this model and its performance, a more basic machine learning model, such as Random Forest could be utilized.  Random forest classifiers combine multiple smaller models into a more robust and accurate model using many decision trees.  They are easy to interpret and can easily handle outlier and nonlinear data and could be a great fit for this dataset.
